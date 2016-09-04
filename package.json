@@ -1,5 +1,5 @@
 {
-  "name": "21-list",
+  "name": "js-list",
   "version": "0.1.0",
   "description": "Javascript list implementation",
   "homepage": "",
@@ -43,10 +43,14 @@
       "mocha": true
     }
   },
-  "repository": "Gelio/21-list",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:Gelio/js-list.git"
+  },
   "scripts": {
     "prepublish": "gulp prepublish",
-    "test": "gulp"
+    "test": "gulp",
+    "watch": "gulp watch"
   },
   "license": "MIT"
 }
