@@ -76,6 +76,15 @@ describe('List', () => {
       expect(list.getLength()).to.equal(3);
       expect(list.find(previousTail)).to.not.exist;
     });
+
+    it('should remove multiple values', () => {
+      list.pushBack('a');
+      list.pushBack('a');
+      list.pushBack('a');
+
+      list.remove('a');
+      expect(list.getLength()).to.equal(4);
+    });
   });
 
   describe('getValues', () => {
