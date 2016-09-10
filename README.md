@@ -21,4 +21,4 @@ For a complete API, see [the docs](https://gelio.github.io/js-list/).
 
 ## License
 
-MIT © [Grzegorz Rozdzialik]()
+MIT © [Grzegorz Rozdzialik](voreny.gelio@gmail.com)
