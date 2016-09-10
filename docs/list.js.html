@@ -41,7 +41,7 @@ export class List {
   /**
    * Creates an instance of List.
    *
-   * @param {any} initialValue
+   * @param {any} initialValue  Value to initiate the list with.
    */
   constructor(initialValue) {
     if (initialValue) {
@@ -52,7 +52,7 @@ export class List {
   /**
    * Computes the length of the list
    *
-   * @returns {number}
+   * @return {number} The length of the list.
    */
   getLength() {
     let current = this.head;
@@ -69,7 +69,7 @@ export class List {
   /**
    * Returns the head of the list (the first element)
    *
-   * @returns {Node}
+   * @return {Node} The head node (the first node in the list)
    */
   getHead() {
     return this.head;
@@ -78,7 +78,7 @@ export class List {
   /**
    * Returns the tail of the list (the last element)
    *
-   * @returns {Node}
+   * @return {Node} The tail node (the last node in the list)
    */
   getTail() {
     return this.reduce((_, node) => node, undefined, false);
@@ -88,15 +88,17 @@ export class List {
    * @callback reduceCallbackFn
    * @param {any} accumulated
    * @param {any} current
-   * @returns {any}
+   * @return {any}
    */
 
   /**
    * Reduces the list to a single value
    *
-   * @param {reduceCallbackFN} callbackFn
-   * @param {any} [startingValue]
-   * @returns {any}
+   * @param {reduceCallbackFN} callbackFn   Callback which reduces the list.
+   * @param {any} [startingValue]           Value to initiate the reducing with.
+   * @param {boolean} [extractValues=true]  Decides on what will be passed to the callbackFn,
+   * either values or whole nodes.
+   * @return {any}                          Reduced value
    */
   reduce(callbackFn, startingValue, extractValues = true) {
     let currentNode;
@@ -139,7 +141,7 @@ export class List {
    * Traverses the list and executes the callback function for each element in the list.
    * The first argument of the callback function is the node's value, the second one is the index.
    *
-   * @param {valueCallbackFn} callbackFn
+   * @param {valueCallbackFn} callbackFn  Function invoked for each element in the list.
    */
   forEach(callbackFn) {
     let index = 0;
@@ -154,8 +156,8 @@ export class List {
   /**
    * Executes callbackFn on each item from the list and returns the results as another list.
    *
-   * @param {valueCallbackFn} callbackFn
-   * @returns {List}
+   * @param {valueCallbackFn} callbackFn  Function invoked for each element in the list
+   * @return {List}   Transformed list
    */
   map(callbackFn) {
     let outputList = new List();
@@ -171,8 +173,8 @@ export class List {
   /**
    * Retrieves the Node with a given index
    *
-   * @param {number} targetIndex
-   * @returns {Node}
+   * @param {number} targetIndex  Wanted node's index
+   * @return {Node}               Found node
    */
   get(targetIndex) {
     let currentIndex = 0;
@@ -189,8 +191,8 @@ export class List {
   /**
    * Adds a value to the end of the list
    *
-   * @param {any} newValue
-   * @returns {List}
+   * @param {any} newValue  A value to be added
+   * @return {List}         This list. Allows for chainability
    */
   pushBack(newValue) {
     let newNode = new Node(newValue);
@@ -208,10 +210,10 @@ export class List {
   /**
    * Adds a value at a given index
    *
-   * @param {any} value
-   * @param {number} index
+   * @param {any} value     Value to be added.
+   * @param {number} index  Index at which the value should be added.
    * @throws {Error} Index must not exceed list size.
-   * @returns {List}
+   * @return {List}    This list. Allows for chainability.
    */
   push(value, index) {
     if (index === 0) {
@@ -233,8 +235,8 @@ export class List {
   /**
    * Removes nodes with specific values from the list
    *
-   * @param {any} valueToRemove
-   * @returns {List}
+   * @param {any} valueToRemove A value to be removed
+   * @return {List}             This list. Allows for chainability.
    */
   remove(valueToRemove) {
     if (this.head.value === valueToRemove) {
@@ -250,8 +252,8 @@ export class List {
    * Used internally by remove. Replaces the current node with a next one if the value matches.
    *
    * @private
-   * @param {Node} previousNode
-   * @param {any} valueToRemove
+   * @param {Node} previousNode Reference to the previous node.
+   * @param {any} valueToRemove Value to be removed.
    */
   _removeRecursive(previousNode, valueToRemove) {
     if (!previousNode.next) {
@@ -270,8 +272,8 @@ export class List {
   /**
    * Returns the first node that value matches.
    *
-   * @param {any} value
-   * @returns {Node}
+   * @param {any} value Value to be found
+   * @return {Node}     Node with that value
    */
   find(value) {
     function findRecursive(node, value) {
@@ -289,7 +291,7 @@ export class List {
   /**
    * Converts the list to an array
    *
-   * @returns &lt;any[]>
+   * @return {any[]}  Array of values from the list
    */
   getValues() {
     let valuesArray = [];
@@ -314,7 +316,7 @@ export class List {
 <br class="clear">
 
 <footer>
-    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.4.0</a> on Sun Sep 04 2016 23:37:32 GMT+0200 (Środkowoeuropejski czas letni)
+    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.4.0</a> on Sat Sep 10 2016 10:09:45 GMT+0200 (Środkowoeuropejski czas letni)
 </footer>
 
 <script> prettyPrint(); </script>
